@@ -1,0 +1,91 @@
+{% extends 'index.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% block head_tag %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Reservation</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href={% static 'css/bootstrap.min.css' %}>
+
+    <link rel="stylesheet" type="text/css" href={% static 'css/font-awesome.css' %}>
+
+    <link rel="stylesheet" href={% static 'css/templatemo-klassy-cafe.css' %}>
+
+    <link rel="stylesheet" href={% static 'css/owl-carousel.css' %}>
+
+    <link rel="stylesheet" href={% static 'css/lightbox.css' %}>
+    
+    <link rel="stylesheet" href={% static "css/check_reservations.css" %}>
+
+</head>
+{% endblock %}
+<body>
+
+{% block mb_area %}
+{% endblock %}
+
+{% block about_area %}
+{% endblock %}
+
+{% block sweets_area %}
+{% endblock %}
+
+{% block chef_area %}
+{% endblock %}
+
+{% block res_area %}
+{% endblock %}
+
+{% block menu_area %}
+{% endblock %}
+
+{% block extras %}
+<main class="container my-5 py-10" style="margin-top: 125px;">
+    <div class="orders-list">
+        {% for res in reservations %}
+            <div class="order-card">
+                <header class="order-header">
+                    <h2 style="margin:5px; padding: 7px;">Reservation By: {{ res.guest_name }}</h2>
+                    <h4 style="margin:5px; padding: 7px;">Table Number: {{ res.table.id }}</h4>
+                    <h5 style="margin:5px; padding: 7px;">Reservation Date: {{ res.reservation_time }}</h5>
+                    
+                    <h5 class="order-total"  style="margin:5px; padding: 7px;">Guest Count: <span class="total-amount">{{ res.guest_count }}</span></h5>
+                </header>
+                <div class="order-body">
+                    
+                    <h3  style="margin:5px; padding: 7px;" >Other Details:</h3>
+                    <ul class="order-items" style="margin-top: 7px;">
+                            <li class="order-item" style="margin:5px; padding: 7px;">
+                                Booked For: {{ res.guest_time }}
+                            </li>
+                            <li class="order-item" style="margin:5px; padding: 7px;">
+                                Message Provided: {{ res.guest_message }}
+                            </li>
+                    </ul>
+                    
+                    
+                        <div class="container">
+                            <div class="row">
+                                
+                                <div class="col-md-2">
+                                    <a href="{% url 'cancel_res' res_id=res.id %}" class="repeat-order-button"><span>Cancel Reservation</span></a>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        {% empty %}
+            <p class="no-orders">No Table Reservations Found.</p>
+        {% endfor %}
+    </div>
+</main>
+{% endblock %}
+</body>
+</html>

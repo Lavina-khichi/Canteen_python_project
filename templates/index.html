@@ -1,0 +1,751 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    {% block head_tag %}
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <title>Digital Canteen</title>
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href={% static 'css/bootstrap.min.css' %}>
+
+    <link rel="stylesheet" type="text/css" href={% static 'css/font-awesome.css' %}>
+
+    <link rel="stylesheet" href={% static 'css/templatemo-klassy-cafe.css' %}>
+
+    <link rel="stylesheet" href={% static 'css/owl-carousel.css' %}>
+
+    <link rel="stylesheet" href={% static 'css/lightbox.css' %}>
+
+    <link rel="stylesheet" href={% static 'css/reg_btn.css' %}>
+
+    </head>
+    {% endblock %}
+    
+    
+    <body>
+    {% block header %}
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+    
+    
+    <!-- ***** Header Area Start ***** -->
+    
+
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="{% url 'home' %}" class="logo">
+                            <img src="../static/images/logo.png" align="Digital Canteen" width="auto" height="80px">
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="{% url 'home' %}" >Home</a></li>
+                                {% if request.user.is_authenticated %}
+                                    <li class="scroll-to-section"><a href="{% url 'menu' %}">Menu</a></li>
+                                    <li class="scroll-to-section"><a href="/#chefs">Chefs</a></li> 
+                                    
+                                    <li class="scroll-to-section"><a href="{% url 'order' %}">Orders</a></li>
+
+                                    <li class="scroll-to-section"><a href="{% url 'cart' %}">Cart</a></li>
+                                    
+                                    <li class="scroll-to-section"><a href="/#reservation">Reservations</a></li> 
+
+                                    <li class="scroll-to-section"><a href="#">Welcome, {{ request.user.first_name }}</a></li>
+
+                                    <li class="scroll-to-section"><a href="{% url 'logout' %}">Log Out</a></li>
+
+                                {% else %}
+                                    <li class="scroll-to-section"><a href="{% url 'menu' %}">Menu</a></li>
+
+                                    <li class="scroll-to-section"><a href="/#chefs">Chefs</a></li> 
+                                    
+                                    <li class="submenu">
+
+                                        <a href="javascript:;">Features</a>
+                                        <ul>
+                                            <li><a href="{% url 'order' %}">Orders</a></li>
+                                            <li><a href="{% url 'cart' %}">Carts</a></li>
+                                        </ul>
+
+                                    </li>
+                                    
+                                    <li class="scroll-to-section"><a href="/#reservation">Reservations</a></li> 
+
+                                    
+                                    <li class="scroll-to-section"><a href="{% url 'register' %}">Register</a></li>
+
+                                    <li class="scroll-to-section"><a href="{% url 'login' %}">Login</a></li>
+
+                                {% endif %}
+
+                                </ul>
+
+                                  
+                                <a class='menu-trigger'>
+                                    <span>Menu</span>
+                                </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    {% endblock %}
+    <!-- ***** Header Area End ***** -->
+
+
+
+
+    <!-- ***** Main Banner Area Start ***** -->
+    {% block mb_area %}
+
+    <div id="top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="left-content">
+                        <div class="inner-content">
+                            <h4>KlassyCafe</h4>
+                            <h6>THE BEST EXPERIENCE</h6>
+                            <div class="main-white-button scroll-to-section">
+                                <a href="#reservation">Make A Reservation</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="main-banner header-text">
+                        <div class="Modern-Slider">
+                          <!-- Item -->
+                          <div class="item">
+                            <div class="img-fill">
+                                <img src="../static/images/slide-01.jpg" alt="">
+                            </div>
+                          </div>
+                          <!-- // Item -->
+                          <!-- Item -->
+                          <div class="item">
+                            <div class="img-fill">
+                                <img src="../static/images/slide-02.jpg" alt="">
+                            </div>
+                          </div>
+                          <!-- // Item -->
+                          <!-- Item -->
+                          <div class="item">
+                            <div class="img-fill">
+                                <img src="../static/images/slide-03.jpg" alt="">
+                            </div>
+                          </div>
+                          <!-- // Item -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+    <!-- ***** Main Banner Area End ***** -->
+
+    <!-- ***** About Area Starts ***** -->
+    {% block about_area %}
+
+    <section class="section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="left-text-content">
+                        <div class="section-heading">
+                            <h6>About Us</h6>
+                            <h2>We Leave A Delicious Memory For You</h2>
+                        </div>
+                        <p>Digital Canteen is one of the best restaurant Lorem ipsum dolor sit amet consectetur adipisicing elit. Non labore quos quo qui culpa ipsam.<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, praesentium vel optio voluptas autem odit? Fugiat ducimus impedit quia voluptate libero a repudiandae rerum accusamus est aperiam, cumque enim quidem reiciendis eveniet unde, non sed.</p>
+                        <div class="row">
+                            <div class="col-4">
+                                <img src="../static/images/about-thumb-01.jpeg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img src="../static/images/about-thumb-02.jpeg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img src="../static/images/about-thumb-03.jpeg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="right-content">
+                        <div class="thumb">
+                            <!-- <a rel="nofollow" href="http://youtube.com"><i class="fa fa-play"></i></a> -->
+                            <img src="../static/images/about-video-bg.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% endblock %}
+    <!-- ***** About Area Ends ***** -->
+
+    <!-- ***** Menu Area Starts ***** -->
+    {% block sweets_area %}
+        <section class="section" id="menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="section-heading">
+                            <h6>Our Menu</h6>
+                            <h2>Our selection of cakes with quality taste</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item-carousel">
+                <div class="col-lg-12">
+                    <div class="owl-menu-item owl-carousel">
+                    
+                    {% for s in sweets %}
+                        <div class="item">
+                            <div class='card' style="background-image: url({{ s.image }});">
+                                <div class="price">
+                                
+                                <h6>
+                                    <a href="add_to_cart/{{ s.id }}" 
+                                    style="
+                                        font-size: 16px;
+                                        color: #ddd; /* Default text color (light gray for contrast on dark background) */
+                                        text-decoration: none; /* No underline by default */
+                                        transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition */
+                                    " 
+                                    onmouseover="this.style.color='white'; this.style.textDecoration='underline';"
+                                    onmouseout="this.style.color='#ddd'; this.style.textDecoration='none';">
+                                        ₹{{ s.price }}
+                                    </a>
+                                </h6>
+                                
+                                </div>
+                                <div class='info'>
+                                    <h1 class='title'>{{ s.name }}</h1>
+                                    <p class='description'>{{ s.description }}</p>
+                                    <div class="main-text-button">
+                                        <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endblock %}
+    <!-- ***** Menu Area Ends ***** -->
+
+    <!-- ***** Chefs Area Starts ***** -->
+
+    {% block chef_area %}
+
+    <section class="section" id="chefs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 offset-lg-4 text-center">
+                    <div class="section-heading">
+                        <h6>Our Chefs</h6>
+                        <h2>We offer the best ingredients for you</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="chef-item">
+                        <div class="thumb">
+                            <div class="overlay"></div>
+                            <ul class="social-icons">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                            <img src="../static/images/chefs-01.jpg" alt="Chef #1">
+                        </div>
+                        <div class="down-content">
+                            <h4>Randy Walker</h4>
+                            <span>Pastry Chef</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="chef-item">
+                        <div class="thumb">
+                            <div class="overlay"></div>
+                            <ul class="social-icons">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                            </ul>
+                            <img src="../static/images/chefs-02.jpg" alt="Chef #2">
+                        </div>
+                        <div class="down-content">
+                            <h4>David Martin</h4>
+                            <span>Cookie Chef</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="chef-item">
+                        <div class="thumb">
+                            <div class="overlay"></div>
+                            <ul class="social-icons">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google"></i></a></li>
+                            </ul>
+                            <img src="../static/images/chefs-03.jpg" alt="Chef #3">
+                        </div>
+                        <div class="down-content">
+                            <h4>Peter Perkson</h4>
+                            <span>Pancake Chef</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% endblock %}
+    <!-- ***** Chefs Area Ends ***** -->
+
+    <!-- ***** Reservation Us Area Starts ***** -->
+    {% block res_area %}
+
+    <section class="section" id="reservation">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 align-self-center">
+                    <div class="left-text-content">
+                        <div class="section-heading">
+                            <h6>Contact Us</h6>
+                            <h2>Here You Can Make A Reservation Or Just walkin to our cafe</h2>
+                        </div>
+                        <p>Donec pretium est orci, non vulputate arcu hendrerit a. Fusce a eleifend riqsie, namei sollicitudin urna diam, sed commodo purus porta ut.</p>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="phone">
+                                    <i class="fa fa-phone"></i>
+                                    <h4>Phone Numbers</h4>
+                                    <span><a href="#">080-090-0990</a><br><a href="#">080-090-0880</a></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="message">
+                                    <i class="fa fa-envelope"></i>
+                                    <h4>Emails</h4>
+                                    <span><a href="#">Anno@un.com</a><br><a href="#">Anno@un.com</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <form id="contact" action="book_table" method="post">
+
+                        {% csrf_token %}
+                        
+                          <div class="row">
+                            <div class="col-lg-12">
+                                <h4>Table Reservation</h4>
+                            </div>
+                            <div class="col-lg-6 col-sm-12">
+                              <fieldset>
+                                <input name="name" type="text" id="name" placeholder="Your Name*" required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-6 col-sm-12">
+                              <fieldset>
+                              <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email Address" required="">
+                            </fieldset>
+                            </div>
+                            <div class="col-lg-6 col-sm-12">
+                              <fieldset>
+                                <input name="phone" type="text" id="phone" placeholder="Phone Number*" required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                              <fieldset>
+                                <select value="number-guests" name="number_guests" id="number-guests">
+                                    <option value="number-guests">Number Of Guests</option>
+                                    <option name="1" id="1">1</option>
+                                    <option name="2" id="2">2</option>
+                                    <option name="3" id="3">3</option>
+                                    <option name="4" id="4">4</option>
+                                    <option name="5" id="5">5</option>
+                                    <option name="6" id="6">6</option>
+                                    <option name="7" id="7">7</option>
+                                    <option name="8" id="8">8</option>
+                                    <option name="9" id="9">9</option>
+                                    <option name="10" id="10">10</option>
+                                    <option name="11" id="11">11</option>
+                                    <option name="12" id="12">12</option>
+                                </select>
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-6">
+                                <div id="filterDate2">    
+                                  <div class="input-group date" data-date-format="dd/mm/yyyy">
+                                    <input  name="date" id="date" type="text" class="form-control" placeholder="dd/mm/yyyy">
+                                    <div class="input-group-addon" >
+                                      <span class="glyphicon glyphicon-th"></span>
+                                    </div>
+                                  </div>
+                                </div>   
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                              <fieldset>
+                                <select value="time" name="time" id="time">
+                                    <option value="time">Time</option>
+                                    <option name="Breakfast" id="Breakfast">Breakfast</option>
+                                    <option name="Lunch" id="Lunch">Lunch</option>
+                                </select>
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <textarea name="message" rows="6" id="message" placeholder="Message" required=""></textarea>
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <button type="submit" id="form-submit" class="main-button-icon">Make A Reservation</button>
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <a href="{% url 'check_reservations' %}"><button type="button" id="form-submit" class="main-button-icon" style="margin-top: 10px">Check Reservations</button></a>
+                                </fieldset>
+                              </div>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% endblock %}
+    <!-- ***** Reservation Area Ends ***** -->
+
+    <!-- ***** Menu Area Starts ***** -->
+    {% block menu_area %}
+
+    <section class="section" id="offers">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 offset-lg-4 text-center">
+                    <div class="section-heading">
+                        <h6>Digi Canteen</h6>
+                        <h2>Our Menu</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row" id="tabs">
+                        <div class="col-lg-12">
+                            <div class="heading-tabs">
+                                <div class="row">
+                                    <div class="col-lg-6 offset-lg-3">
+                                        <ul>
+                                          <li><a href='#tabs-1'><img src="../static/images/tab-icon-01.png" alt="">Breakfast</a></li>
+                                          <li><a href='#tabs-2'><img src="../static/images/tab-icon-02.png" alt="">Lunch</a></a></li>
+                                          {% comment %} <li><a href='#tabs-3'><img src="../static/images/tab-icon-03.png" alt="">Dinner</a></a></li> {% endcomment %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <section class='tabs-content'>
+                                <article id='tabs-1'>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="row">
+                                                <div class="left-list">
+
+                                                {% for bitem in breakfast1 %}
+                                                        <div class="col-lg-12">
+                                                            <div class="tab-item">
+                                                                <img src="{{bitem.image}}" alt="">
+                                                                <h4>{{bitem.name}}</h4>
+                                                                <p>{{bitem.description}}</p>
+                                                                <div class="price">
+                                                                    
+                                                                    <h6>
+                                                                        <a href="add_to_cart/{{ bitem.id }}" 
+                                                                        style="
+                                                                            font-size: 16px;
+                                                                            color: #ddd; /* Default text color (light gray for contrast on dark background) */
+                                                                            text-decoration: none; /* No underline by default */
+                                                                            transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition */
+                                                                        " 
+                                                                        onmouseover="this.style.color='white'; this.style.textDecoration='underline';"
+                                                                        onmouseout="this.style.color='#ddd'; this.style.textDecoration='none';">
+                                                                            ₹{{ bitem.price }}
+                                                                        </a>
+                                                                    </h6>
+                                                                    
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>    
+                                                        {% endfor %}
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-lg-6">
+                                            <div class="row">
+                                                <div class="right-list">
+
+
+                                                    {% for bitem in breakfast2 %}
+                                                        <div class="col-lg-12">
+                                                            <div class="tab-item">
+                                                                <img src="{{bitem.image}}" alt="">
+                                                                <h4>{{bitem.name}}</h4>
+                                                                <p>{{bitem.description}}</p>
+                                                                <div class="price">
+
+                                                                    <h6>
+                                                                        <a href="add_to_cart/{{ bitem.id }}" 
+                                                                        style="
+                                                                            font-size: 16px;
+                                                                            color: #ddd; /* Default text color (light gray for contrast on dark background) */
+                                                                            text-decoration: none; /* No underline by default */
+                                                                            transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition */
+                                                                        " 
+                                                                        onmouseover="this.style.color='white'; this.style.textDecoration='underline';"
+                                                                        onmouseout="this.style.color='#ddd'; this.style.textDecoration='none';">
+                                                                            ₹{{ bitem.price }}
+                                                                        </a>
+                                                                    </h6>
+
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>    
+                                                        {% endfor %}
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>  
+
+
+                                <article id='tabs-2'>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="row">
+                                                <div class="left-list">
+
+                                                    {% for litem in lunch1 %}
+                                                        <div class="col-lg-12">
+                                                            <div class="tab-item">
+                                                                <img src="{{litem.image}}" alt="">
+                                                                <h4>{{litem.name}}</h4>
+                                                                <p>{{litem.description}}</p>
+                                                                <div class="price">
+
+                                                                    <h6>
+                                                                        <a href="add_to_cart/{{ litem.id }}" 
+                                                                        style="
+                                                                            font-size: 16px;
+                                                                            color: #ddd; /* Default text color (light gray for contrast on dark background) */
+                                                                            text-decoration: none; /* No underline by default */
+                                                                            transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition */
+                                                                        " 
+                                                                        onmouseover="this.style.color='white'; this.style.textDecoration='underline';"
+                                                                        onmouseout="this.style.color='#ddd'; this.style.textDecoration='none';">
+                                                                            ₹{{ litem.price }}
+                                                                        </a>
+                                                                    </h6>
+
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>    
+                                                        {% endfor %}
+                                
+                                                </div>
+                                            </div>
+                                        </div>
+                                
+                                
+                                        <div class="col-lg-6">
+                                            <div class="row">
+                                                <div class="right-list">
+
+                                                    {% for litem in lunch2 %}
+                                                        <div class="col-lg-12">
+                                                            <div class="tab-item">
+                                                                <img src="{{litem.image}}" alt="">
+                                                                <h4>{{litem.name}}</h4>
+                                                                <p>{{litem.description}}</p>
+                                                                <div class="price">
+                                                                    <h6>
+                                                                        <a href="add_to_cart/{{ litem.id }}" 
+                                                                        style="
+                                                                            font-size: 16px;
+                                                                            color: #ddd; /* Default text color (light gray for contrast on dark background) */
+                                                                            text-decoration: none; /* No underline by default */
+                                                                            transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition */
+                                                                        " 
+                                                                        onmouseover="this.style.color='white'; this.style.textDecoration='underline';"
+                                                                        onmouseout="this.style.color='#ddd'; this.style.textDecoration='none';">
+                                                                            ₹{{ litem.price }}
+                                                                        </a>
+                                                                    </h6>
+                                                                </div>
+                                                            </div>
+                                                        </div>    
+                                                        {% endfor %}
+                                
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>  
+                                                                
+                                <h3>
+                                    <a href="{% url 'menu' %}" style="
+                                        float: right; 
+                                        font-family: 'Noto Sans', sans-serif; 
+                                        font-size: 34px; 
+                                        color: #333; 
+                                        margin: 0; 
+                                        padding: 0; 
+                                        line-height: 1.5;
+                                        text-decoration: none; 
+                                        font-weight: bold; 
+                                        margin-left: 5px; 
+                                        transition: color 0.3s ease, text-decoration 0.3s ease;
+                                    " 
+                                    onmouseover="this.style.textDecoration='underline'; this.style.color='#000';"
+                                    onmouseout="this.style.textDecoration='none'; this.style.color='#333';">
+                                        Explore Our Whole Menu &rarr;
+                                    </a>
+                                </h3>
+
+
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% endblock %}
+    <!-- ***** Chefs Area Ends ***** --> 
+
+    {% block extras %}
+    {% endblock %}
+    
+    <!-- ***** Footer Start ***** -->
+    {% block footer_area %}
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-xs-12">
+                    <div class="right-text-content">
+                            <ul class="social-icons">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="logo">
+                        <img src="../static/images/logo.png" align="Digital Canteen" width="auto" height="80px">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xs-12">
+                    <div class="left-text-content">
+                        <p>All rights reserved By Anno Un</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    {% endblock %}
+
+    <!-- jQuery -->
+    <script src={% static 'js/jquery-2.1.0.min.js' %}></script>
+
+    <!-- Bootstrap -->
+    <script src={% static 'js/popper.js' %}></script>
+    <script src={% static 'js/bootstrap.min.js' %}></script>
+
+    <!-- Plugins -->
+    <script src={% static 'js/owl-carousel.js' %}></script>
+    <script src={% static 'js/accordions.js' %}></script>
+    <script src={% static 'js/datepicker.js' %}></script>
+    <script src={% static 'js/scrollreveal.min.js' %}></script>
+    <script src={% static 'js/waypoints.min.js' %}></script>
+    <script src={% static 'js/jquery.counterup.min.js' %}></script>
+    <script src={% static 'js/imgfix.min.js' %}></script> 
+    <script src={% static 'js/slick.js' %}></script> 
+    <script src={% static 'js/lightbox.js' %}></script> 
+    <script src={% static 'js/isotope.js' %}></script> 
+    
+    <!-- Global Init -->
+    <script src={% static 'js/custom.js' %}></script>
+    <script src={% static 'js/reg_btn.js' %}></script>    
+
+    <script>
+
+        $(function() {
+            var selectedClass = "";
+            $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+              $("."+selectedClass).fadeIn();
+              $("#portfolio").fadeTo(50, 1);
+            }, 500);
+                
+            });
+        });
+
+    </script>
+
+  </body>
+</html>

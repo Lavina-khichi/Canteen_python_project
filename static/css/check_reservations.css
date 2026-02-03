@@ -1,0 +1,154 @@
+/* Reset some default browser styles */
+body, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Orders List Container */
+.orders-list {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Order Card Styling */
+.order-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* Added New after copy */
+.background-header{
+    background-color: #fff;
+  position: static;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  box-shadow: none !important;
+}
+
+.order-header {
+    border-bottom: 2px solid #007bff;
+    height: 185px!important;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.order-header h2 {
+    font-size: 24px;
+    color: #007bff;
+}
+
+.order-header .order-date {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Order Body Styling */
+.order-body {
+    /* padding: 10px 0; */
+}
+
+.order-total {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.total-amount {
+    font-weight: 600;
+    color: #333;
+}
+
+.order-status {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.status-completed {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.status-pending {
+    color: #ffc107;
+    font-weight: 600;
+}
+
+.order-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.order-item {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.item-subtotal {
+    font-weight: 600;
+}
+
+/* Payment Button Styling */
+/* .payment-button {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.payment-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+} */
+
+.repeat-order-button {
+    display: inline-block;
+    width: 180px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.repeat-order-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    color: whitesmoke;
+}
+
+
+
+/* No Orders Message */
+.no-orders {
+    font-size: 18px;
+    text-align: center;
+    color: #666;
+}

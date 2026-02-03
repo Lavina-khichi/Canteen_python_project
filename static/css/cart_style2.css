@@ -1,0 +1,87 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style for the container */
+.container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Style for the heading */
+.container h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #222;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Style for the paragraphs */
+.container p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Style for the payment button */
+.payment-button {
+    display: block;
+    width: calc(100% - 24px); /* Adjust for padding */
+    padding: 12px 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 20px auto;
+}
+
+.payment-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Optional: Style for the messages */
+.message {
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 1.5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.message.success {
+    border: 1px solid #c3e6cb;
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.message.error {
+    border: 1px solid #f5c6cb;
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.message.info {
+    border: 1px solid #bee5eb;
+    background-color: #d1ecf1;
+    color: #0c5460;
+}

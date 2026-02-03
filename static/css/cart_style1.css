@@ -1,0 +1,140 @@
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #4CAF50;
+}
+
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order-card {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-header {
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.order-header h2 {
+    margin: 0;
+    font-size: 1.4em;
+    color: #333;
+}
+
+.order-date {
+    color: #777;
+    font-size: 0.9em;
+}
+
+.order-body {
+    margin-top: 10px;
+}
+
+.order-total {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.total-amount {
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.order-status {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+.status-completed {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.status-pending {
+    color: #FF9800;
+    font-weight: bold;
+}
+
+h3 {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.order-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.order-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.item-subtotal {
+    font-weight: bold;
+    color: #333;
+}
+
+.no-orders {
+    text-align: center;
+    font-size: 1.1em;
+    color: #888;
+}
+
+.payment-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.payment-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.payment-button:active {
+    background-color: #388e3c;
+    transform: scale(0.95);
+} */

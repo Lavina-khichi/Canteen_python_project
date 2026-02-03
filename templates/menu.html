@@ -1,0 +1,266 @@
+{% extends 'index.html' %}
+
+{% block mb_area %}
+{% endblock %}
+
+{% block about_area %}
+{% endblock %}
+
+{% block sweets_area %}
+{% endblock %}
+
+{% block chef_area %}
+{% endblock %}
+
+{% block res_area %}
+{% endblock %}
+
+{% block menu_area %}
+
+<section class="section" id="offers">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 offset-lg-4 text-center">
+                    <div class="section-heading">
+                        <h6>Digi Canteen</h6>
+                        <h2>Our Menu</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row" id="tabs">
+                        <div class="col-lg-12">
+                            <div class="heading-tabs">
+                                <div class="row">
+                                    <div class="col-lg-6 offset-lg-3">
+                                        <ul>
+                                          <li><a href='#tabs-1'><img src="../static/images/tab-icon-01.png" alt="">Breakfast</a></li>
+                                          <li><a href='#tabs-2'><img src="../static/images/tab-icon-02.png" alt="">Lunch</a></a></li>
+                                          {% comment %} <li><a href='#tabs-3'><img src="../static/images/tab-icon-03.png" alt="">Dinner</a></a></li> {% endcomment %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <section class='tabs-content'>
+                                <article id='tabs-1'>
+                                    <div class="row">
+                                        
+                                        
+                                        <div class="col-lg-6">
+                                            <div class="row">
+                                                <div class="left-list">
+
+                                                    {% for bitem in breakfast1 %}
+                                                        <div class="col-lg-12">
+                                                            <div class="tab-item">
+                                                                <img src="{{bitem.image}}" alt="">
+                                                                <h4>{{bitem.name}}</h4>
+                                                                <p>{{bitem.description}}</p>
+                                                                <div class="price">
+                                                                    
+                                                                    <h6>
+                                                                        <a href="add_to_cart/{{ bitem.id }}" 
+                                                                        style="
+                                                                            font-size: 16px;
+                                                                            color: #ddd; /* Default text color (light gray for contrast on dark background) */
+                                                                            text-decoration: none; /* No underline by default */
+                                                                            transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition */
+                                                                        " 
+                                                                        onmouseover="this.style.color='white'; this.style.textDecoration='underline';"
+                                                                        onmouseout="this.style.color='#ddd'; this.style.textDecoration='none';">
+                                                                            ₹{{ bitem.price }}
+                                                                        </a>
+                                                                    </h6>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>    
+                                                    {% endfor %}
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                         <div class="col-lg-6">
+                                            <div class="row">
+                                                <div class="right-list">
+
+
+                                                    {% for bitem in breakfast2 %}
+                                                        <div class="col-lg-12">
+                                                            <div class="tab-item">
+                                                                <img src="{{bitem.image}}" alt="">
+                                                                <h4>{{bitem.name}}</h4>
+                                                                <p>{{bitem.description}}</p>
+                                                                <div class="price">
+                                                                    
+                                                                    <h6>
+                                                                        <a href="add_to_cart/{{ bitem.id }}" 
+                                                                        style="
+                                                                            font-size: 16px;
+                                                                            color: #ddd; /* Default text color (light gray for contrast on dark background) */
+                                                                            text-decoration: none; /* No underline by default */
+                                                                            transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition */
+                                                                        " 
+                                                                        onmouseover="this.style.color='white'; this.style.textDecoration='underline';"
+                                                                        onmouseout="this.style.color='#ddd'; this.style.textDecoration='none';">
+                                                                            ₹{{ bitem.price }}
+                                                                        </a>
+                                                                    </h6>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>    
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article id='tabs-2'>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="row">
+                                                <div class="left-list">
+
+                                                    {% for litem in lunch1 %}
+                                                        <div class="col-lg-12">
+                                                            <div class="tab-item">
+                                                                <img src="{{litem.image}}" alt="">
+                                                                <h4>{{litem.name}}</h4>
+                                                                <p>{{litem.description}}</p>
+                                                                <div class="price">
+                                                                    
+                                                                    <h6>
+                                                                        <a href="add_to_cart/{{ litem.id }}" 
+                                                                        style="
+                                                                            font-size: 16px;
+                                                                            color: #ddd; /* Default text color (light gray for contrast on dark background) */
+                                                                            text-decoration: none; /* No underline by default */
+                                                                            transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition */
+                                                                        " 
+                                                                        onmouseover="this.style.color='white'; this.style.textDecoration='underline';"
+                                                                        onmouseout="this.style.color='#ddd'; this.style.textDecoration='none';">
+                                                                            ₹{{ litem.price }}
+                                                                        </a>
+                                                                    </h6>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>    
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="row">
+                                                <div class="right-list">
+
+                                                    {% for litem in lunch2 %}
+                                                        <div class="col-lg-12">
+                                                            <div class="tab-item">
+                                                                <img src="{{litem.image}}" alt="">
+                                                                <h4>{{litem.name}}</h4>
+                                                                <p>{{litem.description}}</p>
+                                                                <div class="price">
+                                                                    
+                                                                    <h6>
+                                                                        <a href="add_to_cart/{{ litem.id }}" 
+                                                                        style="
+                                                                            font-size: 16px;
+                                                                            color: #ddd; /* Default text color (light gray for contrast on dark background) */
+                                                                            text-decoration: none; /* No underline by default */
+                                                                            transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition */
+                                                                        " 
+                                                                        onmouseover="this.style.color='white'; this.style.textDecoration='underline';"
+                                                                        onmouseout="this.style.color='#ddd'; this.style.textDecoration='none';">
+                                                                            ₹{{ litem.price }}
+                                                                        </a>
+                                                                    </h6>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>    
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+    <section class="section" id="offers">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row" id="tabs">
+                        <div class="col-lg-12">
+                            <div class="heading-tabs">
+                                <div class="row">
+                                    <div class="col-lg-6 offset-lg-3">
+                                        <ul>
+                                          <li><a href='#'><img src="../static/images/tab-icon-01.png" alt="">Sweets</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+        <section class="section" id="menu">
+        <div class="menu-item-carousel">
+            <div class="col-lg-12">
+                <div class="owl-menu-item owl-carousel">
+                
+                {% for s in sweets %}
+                    <div class="item">
+                        <div class='card' style="background-image: url({{ s.image }});">
+                            <div class="price">
+                            
+                            <h6>
+                                <a href="add_to_cart/{{ s.id }}" 
+                                style="
+                                    font-size: 16px;
+                                    color: #ddd; /* Default text color (light gray for contrast on dark background) */
+                                    text-decoration: none; /* No underline by default */
+                                    transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition */
+                                " 
+                                onmouseover="this.style.color='white'; this.style.textDecoration='underline';"
+                                onmouseout="this.style.color='#ddd'; this.style.textDecoration='none';">
+                                    ₹{{ s.price }}
+                                </a>
+                            </h6>
+                            
+                            </div>
+                            <div class='info'>
+                                <h1 class='title'>{{ s.name }}</h1>
+                                <p class='description'>{{ s.description }}</p>
+                                <div class="main-text-button">
+                                    <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    </section>
+
+
+{% endblock %}
