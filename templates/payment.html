@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Payment Portal</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/payment_page.css' %}">
+</head>
+<body>
+
+    <main class="container">
+        <h2>Order Details</h2>
+        
+        <h4>Order #{{ order.id }}</h2>
+        <p class="order-date">{{ order.created_at|date:"F j, Y, g:i a" }}</p>
+
+        <p>Total Amount: ₹{{ order.total_amount }}</p>
+        <p>Status: {{ order.is_completed|yesno:"Completed,Pending" }}</p>
+
+        <h3>Items:</h3>
+        <ul class="order-items" style="margin: 7px;">
+            {% for item in order.order_items.all %}
+                <li class="order-item">
+                    {{ item.quantity }} x {{ item.menu_item.name }} - <span class="item-subtotal">₹{{ item.subtotal }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="payment-button">Pay Now</button>
+        </form>
+    </main>
+    
+</body>
+</html>
